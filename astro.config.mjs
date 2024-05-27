@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://LunarInteractive.github.io",
+  site: "https://lunarinteractive.github.io",
+  base: "/LunarInteractive",
   integrations: [tailwind()]
 });
