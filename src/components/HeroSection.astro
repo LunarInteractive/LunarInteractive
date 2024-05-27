@@ -1,0 +1,125 @@
+---
+import Container from "./Container.astro";
+
+const partners = [
+  {
+    path: "./images/clients/metaspeak.svg",
+    size: 12,
+  },
+  {
+    path: "./images/clients/indigohub.svg",
+    size: 12,
+  },
+  {
+    path: "./images/clients/LanguageCenter.svg",
+    size: 12,
+  },
+  {
+    path: "./images/clients/titik0.svg",
+    size: 12,
+  },
+];
+---
+
+<div class="relative" id="home">
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
+  >
+    <div
+      class="blur-3xl h-56 bg-gradient-to-br from-warning to-purple-400 dark:from-warning"
+    >
+    </div>
+    <div
+      class="blur-3xl h-32 bg-gradient-to-r from-secondary to-info dark:to-warning"
+    >
+    </div>
+  </div>
+  <Container>
+    <div class="relative pt-36 ml-auto">
+      <div class="lg:w-2/3 text-center mx-auto">
+        <h1
+          class="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl"
+        >
+          Launch your imagination to the moon and beyond
+        </h1>
+        <p class="mt-8 text-gray-700 dark:text-gray-300">
+          At Lunar Interactive, we're driven by a single mission: to ignite the
+          power of imagination through the worlds of games and software. We
+          craft captivating games that transport you to new realities, fostering
+          creativity and pushing the boundaries of entertainment.
+        </p>
+        <div class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
+          <a
+            href="#"
+            class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-secondary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+          >
+            <span class="relative text-base font-semibold text-white"
+              >Get started</span
+            >
+          </a>
+          <a
+            href="#"
+            class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
+          >
+            <span
+              class="relative text-base font-semibold text-primary dark:text-white"
+              >Learn more</span
+            >
+          </a>
+        </div>
+        <div
+          class="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex gap-4 justify-between"
+        >
+          <div class="text-left">
+            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+              Interactive
+            </h6>
+            <p class="mt-2 text-gray-500">
+              We spark meaningful connections that ignite a passion for our
+              products.
+            </p>
+          </div>
+          <div class="text-left">
+            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+              Innovative
+            </h6>
+            <p class="mt-2 text-gray-500">
+              Innovation is at the core of everything we do. Our latest product
+              is a testament to that commitment.
+            </p>
+          </div>
+          <div class="text-left">
+            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+              Intuitive
+            </h6>
+            <p class="mt-2 text-gray-500">
+              We're pioneering intuitive innovations that make powerful
+              technology accessible to everyone.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 flex justify-center">
+        <h1 class="text-6xl capitalize font-bold text-white">partnership</h1>
+      </div>
+      <div class="mt-12 flex justify-center">
+        {
+          partners.map((partner) => (
+            <div class="p-4 grayscale transition duration-200 hover:grayscale-0 group">
+              <img
+                src={partner.path}
+                class="h-12 w-auto mx-auto"
+                loading="lazy"
+                alt="client logo"
+                width=""
+                height=""
+              />
+              <div class="relative bg-secondary -top-10 left-0 w-full h-full opacity-0 transition-all duration-150 group-hover:opacity-60 blur-3xl -z-10" />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</div>

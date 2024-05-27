@@ -1,0 +1,38 @@
+---
+import AppFooter from "../components/AppFooter.astro";
+import AppHeader from "../components/AppHeader.astro";
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="To the moon and beyond." />
+		<title>Lunar Interactive</title>
+		<script
+			src="https://kit.fontawesome.com/07a21b213d.js"
+			crossorigin="anonymous"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="dark:bg-base-100">
+		<AppHeader />
+		<slot />
+		<AppFooter />
+	</body>
+</html>
+<style>
+	html {
+		font-family: Urbanist, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+	}
+</style>

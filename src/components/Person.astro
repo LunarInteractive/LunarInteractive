@@ -1,0 +1,36 @@
+---
+interface Props {
+  person: {
+    name: string;
+    desc: string;
+    role: string;
+  };
+}
+
+const { person } = Astro.props;
+---
+
+<div
+  class="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none flex gap-4"
+>
+  <img
+    class="h-full w-64 rounded-2xl object-cover"
+    src="./images/avatars/avatar.webp"
+    alt="user avatar"
+    width="400"
+    height="400"
+    loading="lazy"
+  />
+  <div class="">
+    <h6 class="text-lg
+    font-medium
+    text-gray-700
+    dark:text-white">
+      {person.name}
+    </h6>
+    <p class="text-sm text-gray-500 dark:text-gray-300">{person.role}</p>
+    <p class="mt-8">
+      {person.desc}
+    </p>
+  </div>
+</div>
