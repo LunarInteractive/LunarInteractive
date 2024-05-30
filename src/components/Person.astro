@@ -3,6 +3,7 @@ interface Props {
   person: {
     name: string;
     desc: string;
+    path: string;
     role: string;
   };
 }
@@ -11,11 +12,11 @@ const { person } = Astro.props;
 ---
 
 <div
-  class="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none flex gap-4"
+  class="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none flex gap-4 flex-col sm:flex-row"
 >
   <img
-    class="h-full w-64 rounded-2xl object-cover"
-    src="./images/avatars/avatar.webp"
+    class="h-full sm:w-64 rounded-2xl object-cover w-full"
+    src={person.path}
     alt="user avatar"
     width="400"
     height="400"
@@ -29,8 +30,8 @@ const { person } = Astro.props;
       {person.name}
     </h6>
     <p class="text-sm text-gray-500 dark:text-gray-300">{person.role}</p>
-    <p class="mt-8">
-      {person.desc}
+    <p class="sm:mt-8 mt-2">
+      "{person.desc}"
     </p>
   </div>
 </div>
