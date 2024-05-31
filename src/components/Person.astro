@@ -7,15 +7,14 @@ interface Props {
     role: string;
   };
 }
-
 const { person } = Astro.props;
 ---
 
 <div
-  class="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none flex gap-4 flex-col sm:flex-row"
+  class="aspect-auto group p-8 border border-gray-100 rounded-3xl bg-gray-800/60 backdrop-blur-md dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none flex gap-4 flex-col sm:flex-row"
 >
   <img
-    class="h-full sm:w-64 rounded-2xl object-cover w-full"
+    class="h-full sm:w-64 rounded-2xl object-cover w-full object-top ease-in-out transition duration-300 scale-100 group-hover:scale-105 shadow-white group-hover:shadow-md"
     src={person.path}
     alt="user avatar"
     width="400"
