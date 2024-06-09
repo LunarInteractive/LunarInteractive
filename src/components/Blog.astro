@@ -2,17 +2,17 @@
 import Container from "./Container.astro";
 const Blogs = [
   {
-    name: "Punchline",
+    name: "punchline",
     path: "./images/thumbnails/punchline.jpg",
     desc: "A game that make you laugh while learning English with Voice Recognition.",
   },
   {
-    name: "Metaspeak",
+    name: "metaspeak",
     path: "./images/thumbnails/metaspeak.jpg",
     desc: "An education games for learning daily English dialogue with Voice Recognition.",
   },
   {
-    name: "Wordwise",
+    name: "wordwise",
     path: "./images/thumbnails/wordwise.png",
     desc: "A mobile game that learns speaking English in certain conditions such as being a receptionist",
   },
@@ -45,14 +45,14 @@ const Blogs = [
               />
             </div>
             <div class="mt-6 flex flex-col grow gap-3 h-auto">
-              <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
+              <h3 class="text-2xl font-semibold text-gray-800 dark:text-white capitalize">
                 {post.name}
               </h3>
               <p class="flex-1 px-4 text-gray-300">{post.desc}</p>
               <div class="flex flex-col ">
                 <a
-                  href="#"
-                  class="text-info hover:text-base-200 hover:border-secondary/50 self-end bg-none hover:bg-info font-medium hover:font-semibold transition-all duration-200 border-2 shadow-none hover:shadow-info/40 hover:shadow-xl border-info px-4 py-2 rounded-md"
+                  href={`products/${post.name}/`}
+                  class="text-info hover:text-base-200 hover:border-secondary/50 self-end bg-none hover:bg-info font-medium hover:font-semibold transition-all duration-200 border-2 shadow-none hover:shadow-info/40 hover:shadow-xl border-info px-4 py-2 rounded-md animate-pulse hover:animate-none "
                 >
                   Read more
                 </a>

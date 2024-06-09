@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { slugify } from "../../js/utils";
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: { product: slugify("metaspeak"), props: { name: "metaspeak" } },
+    },
+    {
+      params: { product: slugify("punchline"), props: { name: "punchline" } },
+    },
+    {
+      params: { product: slugify("wordwise") },
+      props: { name: "wordwise" },
+    },
+  ];
+}
+
+const { product } = Astro.params;
+---
+
+<Layout title="Welcome to Lunar Interactive">
+  <main class="space-y-40 mb-40">
+    <div class="space-y-32">
+      <div class="mt-80"></div>
+      <h1>{product}</h1>
+    </div>
+  </main>
+</Layout>
