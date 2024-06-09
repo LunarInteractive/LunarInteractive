@@ -21,61 +21,53 @@ const partners = [
 ];
 ---
 
-<div class="relative" id="home">
+<div class="relative rounded-bl-[8rem] overflow-hidden" id="home">
+  <div
+    class="w-full h-full absolute opacity-40 blur-sm bg-no-repeat bg-cover bg-left bg-fixed"
+    style="background-image: url('./images/background.jpg')"
+  >
+  </div>
   <div
     aria-hidden="true"
-    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
+    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20"
   >
-    <div
-      class="blur-3xl h-56 bg-gradient-to-br from-warning to-purple-400 dark:from-warning"
-    >
+    <div class="blur-3xl h-56 bg-gradient-to-br to-purple-400 from-warning">
     </div>
-    <div
-      class="blur-3xl h-32 bg-gradient-to-r from-secondary to-info dark:to-warning"
-    >
-    </div>
+    <div class="blur-3xl h-32 bg-gradient-to-r from-secondary to-warning"></div>
   </div>
   <Container>
-    <div class="relative pt-36 ml-auto">
+    <div class="relative pt-32 py-20 auto">
       <div class="lg:w-2/3 text-center mx-auto">
-        <h1
-          class="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl"
-        >
+        <h1 class="text-white font-bold text-5xl md:text-6xl xl:text-7xl">
           Launch your imagination to the moon and beyond
         </h1>
-        <p class="mt-8 text-gray-700 dark:text-gray-300">
+        <p class="mt-8 text-gray-300">
           At Lunar Interactive, we're driven by a single mission: to ignite the
           power of imagination through the worlds of games and software. We
           craft captivating games that transport you to new realities, fostering
           creativity and pushing the boundaries of entertainment.
         </p>
-        <div class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6"></div>
+
         <div
-          class="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex gap-4 justify-between"
+          class="hidden py-8 mt-16 border-y border-base-200/30 sm:flex gap-4 justify-between"
         >
           <div class="text-left">
-            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
-              Interactive
-            </h6>
-            <p class="mt-2 text-gray-500">
+            <h6 class="text-lg font-semibold text-white">Interactive</h6>
+            <p class="mt-2 text-gray-300">
               We spark meaningful connections that ignite a passion for our
               products.
             </p>
           </div>
           <div class="text-left">
-            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
-              Innovative
-            </h6>
-            <p class="mt-2 text-gray-500">
+            <h6 class="text-lg font-semibold text-white">Innovative</h6>
+            <p class="mt-2 text-gray-300">
               Innovation is at the core of everything we do. Our latest product
               is a testament to that commitment.
             </p>
           </div>
           <div class="text-left">
-            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
-              Intuitive
-            </h6>
-            <p class="mt-2 text-gray-500">
+            <h6 class="text-lg font-semibold text-white">Intuitive</h6>
+            <p class="mt-2 text-gray-300">
               We're pioneering intuitive innovations that make powerful
               technology accessible to everyone.
             </p>
@@ -84,6 +76,26 @@ const partners = [
       </div>
       <div class="mt-12 flex justify-center">
         <h1 class="text-6xl capitalize font-bold text-white">partnership</h1>
+      </div>
+      <div class="mt-12 flex justify-center">
+        {
+          partners.map((partner) => (
+            <div class="p-4 grayscale transition duration-200 hover:grayscale-0 group">
+              <img
+                src={partner.path}
+                class="h-12 w-auto mx-auto"
+                loading="lazy"
+                alt="client logo"
+                width=""
+                height=""
+              />
+              <div class="relative bg-secondary -top-10 left-0 w-full h-full opacity-0 transition-all duration-150 group-hover:opacity-60 blur-3xl -z-10" />
+            </div>
+          ))
+        }
+      </div>
+      <div class="mt-12 flex justify-center">
+        <h1 class="text-6xl capitalize font-bold text-white">Clients</h1>
       </div>
       <div class="mt-12 flex justify-center">
         {

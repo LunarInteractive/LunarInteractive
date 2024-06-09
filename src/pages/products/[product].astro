@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const products = [
+  {
+    name: "punchline",
+    desc: "A game that make you laugh while learning English with Voice Recognition.",
+  },
+  {
+    name: "metaspeak",
+    desc: "An education games for learning daily English dialogue with Voice Recognition.",
+  },
+  {
+    name: "wordwise",
+    desc: "A mobile game that learns speaking English in certain conditions such as being a receptionist",
+  },
+];
+
+const { product } = Astro.params;
+const page = products.find((p) => p.name === product);
+if (!page) {
+  return Astro.redirect("/");
+}
+const { desc } = page;
+---
+
+<Layout title="Welcome to Lunar Interactive">
+  <main class="space-y-40 mb-40">
+    <div class="space-y-32">
+      <div class="mt-80"></div>
+      <h1>{product}</h1>
+      <p>{desc}</p>
+    </div>
+  </main>
+</Layout>

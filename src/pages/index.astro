@@ -9,17 +9,16 @@ import Blog from "../components/Blog.astro";
 ---
 
 <Layout title="Welcome to Lunar Interactive">
-	<main class="space-y-40 mb-40 relative">
-		<HeroSection />
-		<div class="space-y-40 relative">
+	<main class="space-y-40 mb-40">
+		<div class="space-y-32">
+			<HeroSection />
 			<Crew />
 			<Blog />
 			<!-- <img
 				src="./images/background.jpg"
 				class="absolute top-0 left-0 z-0 inset-0 object-cover w-full h-full"
 			/> -->
+			<!-- <CallToAction /> -->
 		</div>
 	</main>
-
-	<CallToAction />
 </Layout>

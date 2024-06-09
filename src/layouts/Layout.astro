@@ -1,6 +1,8 @@
 ---
+import { ImportsNotUsedAsValues } from "typescript";
 import AppFooter from "../components/AppFooter.astro";
 import AppHeader from "../components/AppHeader.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <!doctype html>
@@ -8,31 +10,37 @@ import AppHeader from "../components/AppHeader.astro";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="./logo.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="To the moon and beyond." />
-		<title>Lunar Interactive</title>
-		<script
-			src="https://kit.fontawesome.com/07a21b213d.js"
-			crossorigin="anonymous"></script>
 		<link
+			rel="icon"
+			type="image/svg+xml"
+			href={`${import.meta.env.BASE_URL}/logo.svg`}
+		/>
+		<meta name="generator" content={Astro.generator} /><meta
+			name="description"
+			content="To the moon and beyond."
+		/><title>Lunar Interactive</title><script
+			src="https://kit.fontawesome.com/07a21b213d.js"
+			crossorigin="anonymous"></script><link
 			href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
-		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
+		/><link rel="preconnect" href="https://fonts.googleapis.com" /><link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/><link
 			href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
 			rel="stylesheet"
-		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
+		/><link rel="preconnect" href="https://fonts.googleapis.com" /><link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/><link
 			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
 			rel="stylesheet"
-		/>
-	</head>
-	<body class="dark:bg-base-100">
+		/></head
+	>
+
+	<body class="">
 		<AppHeader />
 		<slot />
 		<AppFooter />
