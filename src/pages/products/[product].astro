@@ -1,23 +1,27 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { slugify } from "../../js/utils";
 
-export async function getStaticPaths() {
-  return [
-    {
-      params: { product: slugify("metaspeak"), props: { name: "metaspeak" } },
-    },
-    {
-      params: { product: slugify("punchline"), props: { name: "punchline" } },
-    },
-    {
-      params: { product: slugify("wordwise") },
-      props: { name: "wordwise" },
-    },
-  ];
-}
+const products = [
+  {
+    name: "punchline",
+    desc: "A game that make you laugh while learning English with Voice Recognition.",
+  },
+  {
+    name: "metaspeak",
+    desc: "An education games for learning daily English dialogue with Voice Recognition.",
+  },
+  {
+    name: "wordwise",
+    desc: "A mobile game that learns speaking English in certain conditions such as being a receptionist",
+  },
+];
 
 const { product } = Astro.params;
+const page = products.find((p) => p.name === product);
+if (!page) {
+  return Astro.redirect("/");
+}
+const { desc } = page;
 ---
 
 <Layout title="Welcome to Lunar Interactive">
@@ -25,6 +29,7 @@ const { product } = Astro.params;
     <div class="space-y-32">
       <div class="mt-80"></div>
       <h1>{product}</h1>
+      <p>{desc}</p>
     </div>
   </main>
 </Layout>
