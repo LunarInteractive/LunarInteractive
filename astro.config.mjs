@@ -9,7 +9,7 @@ export default defineConfig({
   site: "https://lunarinteractive.github.io",
   trailingSlash: "ignore",
   output: "server",
-  integrations: [tailwind(), icon(), sentry()],
+  integrations: [tailwind(), icon()],
   adapter: vercel({
     webAnalytics: {
       enabled: true
