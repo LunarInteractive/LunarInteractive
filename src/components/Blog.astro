@@ -40,14 +40,14 @@ const Blogs = [
       {
         Blogs.map((post) => (
           <div class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl backdrop-blur-xl shadow-gray-600/10 flex flex-col">
-            <div class="overflow-hidden rounded-xl relative">
+            <div class="rounded-xl h-64 overflow-hidden relative">
               <img
                 src={post.path}
                 alt="art cover"
                 loading="lazy"
                 width="1000"
                 height="667"
-                class="h-64 w-full left-0 top-0 object-cover transition duration-500 group-hover:scale-105"
+                class="h-64 w-full absolute opacity-100 group-hover:opacity-0 left-0 top-0 object-cover transition duration-300  group-hover:scale-105"
               />
               <img
                 src={post.gif}
@@ -55,7 +55,7 @@ const Blogs = [
                 loading="lazy"
                 width="1000"
                 height="667"
-                class="h-64 w-full left-0 top-0 object-cover transition duration-500 group-hover:scale-105"
+                class="h-64 w-full absolute opacity-0 group-hover:opacity-100 left-0 top-0 object-cover transition duration-300  group-hover:scale-105"
               />
             </div>
             <div class="mt-6 flex flex-col grow gap-3 h-auto">
