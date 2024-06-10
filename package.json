@@ -16,8 +16,10 @@
     "@sentry/astro": "^8.8.0",
     "@spotlightjs/astro": "^1.0.20",
     "astro": "^4.9.1",
+    "astro-cloudinary-image": "^0.0.6",
     "astro-icon": "^1.1.0",
     "astro-tunnel": "^0.1.6",
+    "cloudinary": "^2.2.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   },

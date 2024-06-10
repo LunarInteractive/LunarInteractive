@@ -1,9 +1,22 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import NavSpacer from "../../components/NavSpacer.astro";
+
+const images = await Astro.glob("../../../public/images/gallery/*.jpg");
 ---
 
 <Layout title="Welcome to Lunar Interactive">
+  <NavSpacer />
   <main class="space-y-40 mb-40 relative">
-    <div class="space-y-40 relative"></div>
+    <div class="space-y-40 grid grid-cols-3 gap-1 place-items-center">
+      {
+        images.map((image) => (
+          <div class="w-full object-cover overflow-hidden">
+            <Image src={image.default} class="h-full object-cover" alt="rawr" />
+          </div>
+        ))
+      }
+    </div>
   </main>
 </Layout>
