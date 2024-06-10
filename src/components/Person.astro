@@ -16,7 +16,7 @@ const { person } = Astro.props;
 >
   <img
     class="w-full h-auto object-cover rounded-3xl ease-in-out transition duration-300 scale-100 group-hover:scale-105 shadow-white group-hover:shadow-md"
-    src={`./images/avatars/${person.path}.png`}
+    src={person.path}
     alt="user avatar"
   />
   <div
