@@ -3,17 +3,23 @@ import Container from "./Container.astro";
 const Blogs = [
   {
     name: "punchline",
+    title: "Punchline",
     path: "./images/thumbnails/punchline.jpg",
+    gif: "./images/thumbnails/punchline.gif",
     desc: "A game that make you laugh while learning English with Voice Recognition.",
   },
   {
-    name: "metaspeak",
-    path: "./images/thumbnails/metaspeak.jpg",
+    name: "wordwise",
+    title: "Wordwise",
+    path: "./images/thumbnails/wordwise.jpg",
+    gif: "./images/thumbnails/wordwise.gif",
     desc: "An education games for learning daily English dialogue with Voice Recognition.",
   },
   {
-    name: "wordwise",
-    path: "./images/thumbnails/wordwise.jpg",
+    name: "wordwise_mobile",
+    title: "Wordwise: Mobile",
+    path: "./images/thumbnails/wordwise_mobile.jpg",
+    gif: "./images/thumbnails/wordwise_mobile.jpg",
     desc: "A mobile game that learns speaking English in certain conditions such as being a receptionist",
   },
 ];
@@ -34,19 +40,27 @@ const Blogs = [
       {
         Blogs.map((post) => (
           <div class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl backdrop-blur-xl shadow-gray-600/10 flex flex-col">
-            <div class="overflow-hidden rounded-xl">
+            <div class="overflow-hidden rounded-xl relative">
               <img
                 src={post.path}
                 alt="art cover"
                 loading="lazy"
                 width="1000"
                 height="667"
-                class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                class="h-64 w-full left-0 top-0 object-cover transition duration-500 group-hover:scale-105"
+              />
+              <img
+                src={post.gif}
+                alt="art cover"
+                loading="lazy"
+                width="1000"
+                height="667"
+                class="h-64 w-full left-0 top-0 object-cover transition duration-500 group-hover:scale-105"
               />
             </div>
             <div class="mt-6 flex flex-col grow gap-3 h-auto">
               <h3 class="text-2xl font-semibold text-gray-800 dark:text-white capitalize">
-                {post.name}
+                {post.title}
               </h3>
               <p class="flex-1 px-4 text-gray-300">{post.desc}</p>
               <div class="flex flex-col ">
