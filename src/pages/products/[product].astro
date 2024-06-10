@@ -10,7 +10,7 @@ const pageMarkdown = markdown.find((p) => p.frontmatter.name === product);
 if (!pageMarkdown) {
   return Astro.redirect("/");
 }
-const { name, sub } = pageMarkdown.frontmatter;
+const { title, name, sub } = pageMarkdown.frontmatter;
 ---
 
 <Layout title="Welcome to Lunar Interactive">
@@ -24,13 +24,17 @@ const { name, sub } = pageMarkdown.frontmatter;
   </div>
   <Container>
     <div class="mt-12">
-      <h1 class="text-5xl font-bold">{name}</h1>
+      <h1 class="text-5xl font-bold">{title}</h1>
       <h2 class="ml-6 mt-6 text-lg">{sub}</h2>
     </div>
     <div>
       <div class="mt-6 prose prose-lg prose-indigo mx-auto dark:prose-dark">
-        <div set:html={pageMarkdown.rawContent} />
+        <div
+          class="grid grid-cols-1 grid-rows-1 gap-4"
+          id=""
+          set:html={pageMarkdown.compiledContent()}
+        />
       </div>
-    </div>
-  </Container></Layout
->
+    </div></Container
+  >
+</Layout>
