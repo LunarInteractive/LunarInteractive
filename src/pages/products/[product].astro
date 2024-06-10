@@ -1,35 +1,36 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
-const products = [
-  {
-    name: "punchline",
-    desc: "A game that make you laugh while learning English with Voice Recognition.",
-  },
-  {
-    name: "metaspeak",
-    desc: "An education games for learning daily English dialogue with Voice Recognition.",
-  },
-  {
-    name: "wordwise",
-    desc: "A mobile game that learns speaking English in certain conditions such as being a receptionist",
-  },
-];
+import Container from "../../components/Container.astro";
+import NavSpacer from "../../components/NavSpacer.astro";
 
 const { product } = Astro.params;
-const page = products.find((p) => p.name === product);
-if (!page) {
+
+const markdown = await Astro.glob("../../markdown/*.md");
+const pageMarkdown = markdown.find((p) => p.frontmatter.name === product);
+if (!pageMarkdown) {
   return Astro.redirect("/");
 }
-const { desc } = page;
+const { name, sub } = pageMarkdown.frontmatter;
 ---
 
 <Layout title="Welcome to Lunar Interactive">
-  <main class="space-y-40 mb-40">
-    <div class="space-y-32">
-      <div class="mt-80"></div>
-      <h1>{product}</h1>
-      <p>{desc}</p>
+  <NavSpacer />
+  <div class="h-[50dvh] overflow-hidden">
+    <img
+      src=`${import.meta.env.BASE_URL}./images/thumbnails/${product}.jpg`
+      class="w-full object-cover object-center h-full"
+      alt=""
+    />
+  </div>
+  <Container>
+    <div class="mt-12">
+      <h1 class="text-5xl font-bold">{name}</h1>
+      <h2 class="ml-6 mt-6 text-lg">{sub}</h2>
     </div>
-  </main>
-</Layout>
+    <div>
+      <div class="mt-6 prose prose-lg prose-indigo mx-auto dark:prose-dark">
+        <div set:html={pageMarkdown.rawContent} />
+      </div>
+    </div>
+  </Container></Layout
+>
