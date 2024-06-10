@@ -3,7 +3,6 @@ import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import vercel from "@astrojs/vercel/serverless";
 
-import sentry from "@sentry/astro";
 
 // https://astro.build/config
 export default defineConfig({
