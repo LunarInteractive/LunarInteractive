@@ -2,9 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import NavSpacer from "../../components/NavSpacer.astro";
-import { promises as fs } from "fs";
 
-const images = await Astro.glob("../../../public/images/gallery/*/**.jpg");
+const images = await Astro.glob("../../gallery/*/**.jpg");
 
 const folderStructure: string[] = ["indigo", "pkm"];
 
@@ -12,7 +11,7 @@ function hasFileName(stringToCheck: string, stringToFind: string): boolean {
   return stringToCheck.includes(stringToFind);
 }
 
-const newDataList = await images.map((image: any) => {
+const newDataList = images.map((image: any) => {
   const folder = image.default.src
     .split("/")
     .slice(0, image.default.src.split("/").length - 1);
