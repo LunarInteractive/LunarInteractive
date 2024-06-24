@@ -6,7 +6,7 @@ import { promises as fs } from "fs";
 
 const images = await Astro.glob("../../../public/images/gallery/*/**.jpg");
 
-const folderStructure: string[] = await fs.readdir("./public/images/gallery");
+const folderStructure: string[] = ["indigo", "pkm"];
 
 async function hasFileName(
   stringToCheck: string,
