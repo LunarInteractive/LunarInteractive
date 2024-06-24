@@ -39,8 +39,8 @@ const newDataList = images.map((image: any) => {
             {folder}
           </h1>
           <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 place-items-center">
-            {newDataList.map((image) => {
-              if (hasFileName(image.folderName, folder)) {
+            {newDataList.map(async (image) => {
+              if (await hasFileName(image.folderName, folder)) {
                 return (
                   <div class="rounded-xl group overflow-hidden shadow-lg shadow-slate-300/0  hover:shadow-slate-300/15 duration-300">
                     <span>{image.default.src}</span>
