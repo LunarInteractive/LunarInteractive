@@ -7,7 +7,10 @@ const images = await Astro.glob("../../gallery/*/**.jpg");
 
 const folderStructure: string[] = ["indigo", "pkm"];
 
-function hasFileName(stringToCheck: string, stringToFind: string): boolean {
+async function hasFileName(
+  stringToCheck: string,
+  stringToFind: string,
+): Promise<boolean> {
   return stringToCheck.includes(stringToFind);
 }
 
