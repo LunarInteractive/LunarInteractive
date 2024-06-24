@@ -10,17 +10,6 @@ const folderStructure: string[] = ["indigo", "pkm"];
 function hasFileName(stringToCheck: string, stringToFind: string): boolean {
   return stringToCheck.includes(stringToFind);
 }
-
-const newDataList = images.map((image: any) => {
-  const folder = image.default.src
-    .split("/")
-    .slice(0, image.default.src.split("/").length - 1);
-  const folderName = folder[folder.length - 1];
-  return {
-    ...image,
-    folderName,
-  };
-});
 ---
 
 <Layout title="Welcome to Lunar Interactive">
@@ -36,11 +25,15 @@ const newDataList = images.map((image: any) => {
             {folder}
           </h1>
           <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 place-items-center">
-            {newDataList.map(async (image) => {
-              if (hasFileName(image.folderName, folder)) {
+            {images.map((image) => {
+              if (hasFileName(image.default.src, folder)) {
                 return (
                   <div class="rounded-xl group overflow-hidden shadow-lg shadow-slate-300/0  hover:shadow-slate-300/15 duration-300">
-                    <span>{image.default.src}</span>
+                    <Image
+                      src={image.default}
+                      class="h-full blur-sm transition-all duration-[0.4s] group-hover:blur-none rounded-xl "
+                      alt="rawr"
+                    />
                   </div>
                 );
               }
