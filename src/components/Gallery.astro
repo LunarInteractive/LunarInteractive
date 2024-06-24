@@ -1,7 +1,7 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import NavSpacer from "../../components/NavSpacer.astro";
+import NavSpacer from "../components/NavSpacer.astro";
 
 const images = await Astro.glob("../../gallery/*/**.jpg");
 
@@ -10,6 +10,17 @@ const folderStructure: string[] = ["indigo", "pkm"];
 function hasFileName(stringToCheck: string, stringToFind: string): boolean {
   return stringToCheck.includes(stringToFind);
 }
+
+const newDataList = images.map((image: any) => {
+  const folder = image.default.src
+    .split("/")
+    .slice(0, image.default.src.split("/").length - 1);
+  const folderName = folder[folder.length - 1];
+  return {
+    ...image,
+    folderName,
+  };
+});
 ---
 
 <Layout title="Welcome to Lunar Interactive">
@@ -25,8 +36,8 @@ function hasFileName(stringToCheck: string, stringToFind: string): boolean {
             {folder}
           </h1>
           <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 place-items-center">
-            {images.map((image) => {
-              if (hasFileName(image.default.src, folder)) {
+            {newDataList.map((image) => {
+              if (hasFileName(image.folderName, folder)) {
                 return (
                   <div class="rounded-xl group overflow-hidden shadow-lg shadow-slate-300/0  hover:shadow-slate-300/15 duration-300">
                     <Image
@@ -39,6 +50,7 @@ function hasFileName(stringToCheck: string, stringToFind: string): boolean {
               }
             })}
           </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 place-items-center" />
         </div>
       ))
     }
