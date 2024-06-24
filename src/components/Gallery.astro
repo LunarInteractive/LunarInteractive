@@ -40,12 +40,17 @@ const newDataList = images.map((image: any) => {
               if (hasFileName(image.folderName, folder)) {
                 return (
                   <div class="rounded-xl group overflow-hidden shadow-lg shadow-slate-300/0  hover:shadow-slate-300/15 duration-300">
-                    <span>{image.default.src}</span>
+                    <Image
+                      src={image.default}
+                      class="h-full blur-sm transition-all duration-[0.4s] group-hover:blur-none rounded-xl "
+                      alt="rawr"
+                    />
                   </div>
                 );
               }
             })}
           </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 place-items-center" />
         </div>
       ))
     }
